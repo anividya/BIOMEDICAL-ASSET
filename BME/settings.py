@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-s$dtp0=d*ieplv81zbaa7vawai%%qm@3d=sm^2vx@bb%2f+y#r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['bmeassets.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django_filters',
     'bootstrapform',
     'widget_tweaks',
-    'bootstrap_datepicker_plus',
+    'bootstrap_datepicker_plus'
     
 ]
 
