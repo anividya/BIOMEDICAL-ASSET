@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+{% load bootstrap %}
+
+
+
+{% block content %}
+
+<div class="container">
+ <div class="table-responsive-sm">          
+    <table class="table table-bordered">
+      <table id="assetlist" class="display" style="width:100%">
+        <thead class="boder-bottom font-weight-bold">
+          <tr>
+            <td>Asset ID</td>
+            <td>Asset Name</td>
+            <td>Make</td>
+            <td>Model</td>
+            <td>Sl_No</td>
+            <td>Dept</td>
+            <td>PMSTAT</td>
+            <td>CALSTAT</td>
+            <td>STAT</td>
+            <td>
+              <a href="{% url 'asset_insert' %}" class="btn btn-outline-success">
+                <i class="fas fa-plus"></i>Add New
+              </a>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for Asset in index %}
+          <tr>
+            <td>{{Asset.assetid}}</td>
+            <td>{{Asset.assetname}}</td>
+            <td>{{Asset.asset_make}}</td>
+            <td>{{Asset.asset_model}}</td>
+            <td>{{Asset.slno}}</td>
+            <td>{{Asset.dept}}</td>
+            <td>{{Asset.pmstat}}</td>
+            <td>{{Asset.calstat}}</td>
+            <td>{{Asset.stat}}</td>
+            <td>
+                <a href="{% url 'asset_update' Asset.id %}" class="btn btn-outline-success">
+                    <i class="fas fa-edit"></i>EDIT
+                </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </table>
+  </div>
+</div>
+
+  
+{% endblock content %}

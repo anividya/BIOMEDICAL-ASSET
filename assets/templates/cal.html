@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+
+<div class="container">
+    <form method="get">
+          <div class="col">
+              <div class="row">
+                    <div class="form-group col-sm-4 col-md-3 col-lg-3" >
+                    {{ filter.form.assetname.label_tag }}
+                    {% render_field filter.form.assetname class="form-control" %}
+                    </div>
+                    <div class="form-group col-sm-4 col-md-3 col-lg-3" >
+                    {{ filter.form.calstat.label_tag }}
+                    {% render_field filter.form.calstat class="form-control" %}
+                    </div>
+                    <div class="form-group col-sm-4 col-md-3 col-lg-3">
+                    {{ filter.form.caldue.label_tag }}
+                    {% render_field filter.form.caldue class="form-control" %}
+                    </div>
+                    <div class="form-group col-sm-4 col-md-3 col-lg-3">
+                    {{ filter.form.calduerange.label_tag }}
+                    {% render_field filter.form.calduerange class="form-control" %}
+                    </div>
+                </div>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <span class="glyphicon glyphicon-search"></span> Search
+          </button>
+      </form>
+ <div class="table-responsive-sm">          
+    <table class="table table-bordered">
+      <table id="assetlist" class="display" style="width:100%">
+        <thead class="boder-bottom font-weight-bold">
+          <tr>
+            <td>Asset ID</td>
+            <td>Asset Name</td>
+            <td>Make</td>
+            <td>Model</td>
+            <td>Sl_No</td>
+            <td>Dept</td>
+            <td>PMSTAT</td>
+            <td>CALSTAT</td>
+            <td>STAT</td>
+            <td>
+              <a href="{% url 'asset_insert' %}" class="btn btn-outline-success">
+                <i class="fas fa-plus"></i>Add New
+              </a>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for Asset in filter.qs %}
+          <tr>
+            <td>{{Asset.assetid}}</td>
+            <td>{{Asset.assetname}}</td>
+            <td>{{Asset.asset_make}}</td>
+            <td>{{Asset.asset_model}}</td>
+            <td>{{Asset.slno}}</td>
+            <td>{{Asset.dept}}</td>
+            <td>{{Asset.pmstat}}</td>
+            <td>{{Asset.calstat}}</td>
+            <td>{{Asset.stat}}</td>
+            <td>
+                <a href="{% url 'asset_update' Asset.id %}" class="btn btn-outline-success">
+                    <i class="fas fa-edit"></i>EDIT
+                </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </table>
+  </div>
+</div>
+
+  
+{% endblock content %}
