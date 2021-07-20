@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-s$dtp0=d*ieplv81zbaa7vawai%%qm@3d=sm^2vx@bb%2f+y#r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['bmeassets.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -132,7 +132,9 @@ STATIC_URL = '/static/'
 STATIC_DIRS = [
     os.path.join(BASE_DIR, 'DJANGO/static')
 ]
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
