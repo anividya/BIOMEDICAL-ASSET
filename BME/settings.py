@@ -14,6 +14,9 @@ import os
 from pathlib import Path
 import django_heroku
 
+THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+my_file = os.path.join(THIS_FOLDER, 'myfile.txt')
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
