@@ -1,1 +1,1 @@
-web: gunicorn BME.wsgi
+web: gunicorn BME:assets.wsgi
