@@ -14,9 +14,8 @@ import os
 from pathlib import Path
 import django_heroku
 from django.core.wsgi import get_wsgi_application
-from dj_static import Cling
 
-application = Cling(get_wsgi_application())
+
 
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 my_file = os.path.join(THIS_FOLDER, 'myfile.txt')
@@ -118,6 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
 
 
 # Internationalization
