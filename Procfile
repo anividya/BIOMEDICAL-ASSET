@@ -1,1 +1,1 @@
-web: gunicorn assets.wsgi
+web: gunicorn BME.wsgi:application --log-file - --log-level debug
