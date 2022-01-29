@@ -8,22 +8,30 @@
     <form method="get">
           <div class="col">
               <div class="row">
-                    <div class="form-group col-sm-4 col-md-3 col-lg-3" >
-                    {{ filter.form.assetname.label_tag }}
-                    {% render_field filter.form.assetname class="form-control" %}
-                    </div>
-                    <div class="form-group col-sm-4 col-md-3 col-lg-3" >
+                <div class="form-group col-sm-4 col-md-2 col-lg-2" >
+                  {{ filter.form.assetname.label_tag }}
+                  {% render_field filter.form.assetname class="form-control" %}
+                  </div>
+                  <div class="form-group col-sm-4 col-md-2 col-lg-2" >
+                    {{ filter.form.Make.label_tag }}
+                    {% render_field filter.form.Make class="form-control" %}
+                  </div>
+                  <div class="form-group col-sm-4 col-md-2 col-lg-2" >
+                    {{ filter.form.Dept.label_tag }}
+                    {% render_field filter.form.Dept class="form-control" %}
+                  </div>
+                  <div class="form-group col-sm-4 col-md-2 col-lg-2">
+                  {{ filter.form.caldue.label_tag }}
+                  {% render_field filter.form.caldue class="form-control" %}
+                  </div>
+                  <div class="form-group col-sm-4 col-md-2 col-lg-2">
                     {{ filter.form.calstat.label_tag }}
                     {% render_field filter.form.calstat class="form-control" %}
                     </div>
-                    <div class="form-group col-sm-4 col-md-3 col-lg-3">
-                    {{ filter.form.caldue.label_tag }}
-                    {% render_field filter.form.caldue class="form-control" %}
-                    </div>
-                    <div class="form-group col-sm-4 col-md-3 col-lg-3">
-                    {{ filter.form.calduerange.label_tag }}
-                    {% render_field filter.form.calduerange class="form-control" %}
-                    </div>
+                  <div class="form-group col-sm-4 col-md-2 col-lg-2">
+                  {{ filter.form.calduerange.label_tag }}
+                  {% render_field filter.form.calduerange class="form-control" %}
+                  </div>
                 </div>
           </div>
           <button type="submit" class="btn btn-primary">
@@ -43,6 +51,7 @@
             <td>Dept</td>
             <td>PMSTAT</td>
             <td>CALSTAT</td>
+            <td>AMC/CMC</td>
             <td>STAT</td>
             <td>
               <a href="{% url 'asset_insert' %}" class="btn btn-outline-success">
@@ -62,9 +71,10 @@
             <td>{{Asset.dept}}</td>
             <td>{{Asset.pmstat}}</td>
             <td>{{Asset.calstat}}</td>
+            <td>{{Asset.amc_cmc}}</td>
             <td>{{Asset.stat}}</td>
             <td>
-                <a href="{% url 'asset_update' Asset.id %}" class="btn btn-outline-success">
+                <a href="{% url 'asset_update' Asset.id %}" class="btn btn-warning btn-sm">
                     <i class="fas fa-edit"></i>EDIT
                 </a>
             </td>

@@ -21,10 +21,11 @@
             <td>Dept</td>
             <td>PMSTAT</td>
             <td>CALSTAT</td>
+            <td>AMC/CMC</td>
             <td>STAT</td>
             <td>
               <a href="{% url 'asset_insert' %}" class="btn btn-outline-success">
-                <i class="fas fa-plus"></i>Add New
+                <i class="fas fa-plus"></i> Add New
               </a>
             </td>
           </tr>
@@ -40,10 +41,11 @@
             <td>{{Asset.dept}}</td>
             <td>{{Asset.pmstat}}</td>
             <td>{{Asset.calstat}}</td>
+            <td>{{Asset.amc_cmc}}</td>
             <td>{{Asset.stat}}</td>
             <td>
-                <a href="{% url 'asset_update' Asset.id %}" class="btn btn-outline-success">
-                    <i class="fas fa-edit"></i>EDIT
+                <a href="{% url 'asset_update' Asset.id %}" class="btn btn-warning btn-sm">
+                  <i class="fas fa-edit"></i> Edit
                 </a>
             </td>
           </tr>

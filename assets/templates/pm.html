@@ -11,19 +11,27 @@
   <form method="get">
     <div class="col">
         <div class="row">
-              <div class="form-group col-sm-4 col-md-3 col-lg-3" >
+              <div class="form-group col-sm-4 col-md-2 col-lg-2" >
               {{ filter.form.assetname.label_tag }}
               {% render_field filter.form.assetname class="form-control" %}
               </div>
-              <div class="form-group col-sm-4 col-md-3 col-lg-3">
+              <div class="form-group col-sm-4 col-md-2 col-lg-2" >
+                {{ filter.form.Make.label_tag }}
+                {% render_field filter.form.Make class="form-control" %}
+              </div>
+              <div class="form-group col-sm-4 col-md-2 col-lg-2" >
+                {{ filter.form.Dept.label_tag }}
+                {% render_field filter.form.Dept class="form-control" %}
+              </div>
+              <div class="form-group col-sm-4 col-md-2 col-lg-2">
               {{ filter.form.pmdue.label_tag }}
               {% render_field filter.form.pmdue class="form-control" %}
               </div>
-              <div class="form-group col-sm-4 col-md-3 col-lg-3">
+              <div class="form-group col-sm-4 col-md-2 col-lg-2">
                 {{ filter.form.pmstat.label_tag }}
                 {% render_field filter.form.pmstat class="form-control" %}
                 </div>
-              <div class="form-group col-sm-4 col-md-3 col-lg-3">
+              <div class="form-group col-sm-4 col-md-2 col-lg-2">
               {{ filter.form.pmduerange.label_tag }}
               {% render_field filter.form.pmduerange class="form-control" %}
               </div>
@@ -46,9 +54,10 @@
             <td>Dept</td>
             <td>PMSTAT</td>
             <td>CALSTAT</td>
+            <td>AMC/CMC</td>
             <td>STAT</td>
             <td>
-              <a href="{% url 'asset_insert' %}" class="btn btn-outline-success">
+              <a href="{% url 'asset_insert' %}" class="btn btn-warning btn-sm">
                 <i class="fas fa-plus"></i>Add New
               </a>
             </td>
@@ -65,6 +74,7 @@
             <td>{{Asset.dept}}</td>
             <td>{{Asset.pmstat}}</td>
             <td>{{Asset.calstat}}</td>
+            <td>{{Asset.amc_cmc}}</td>
             <td>{{Asset.stat}}</td>
             <td>
                 <a href="{% url 'asset_update' Asset.id %}" class="btn btn-outline-success">

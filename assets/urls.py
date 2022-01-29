@@ -1,5 +1,4 @@
-from django.conf.urls import url
-from django.urls import path,include
+from django.urls import path
 from . import views
 
 urlpatterns = [
@@ -9,5 +8,4 @@ urlpatterns = [
     path('asset_list',views.index,name='asset_list'),
     path('<int:id>/',views.asset_form,name='asset_update'),
     
-   
 ]

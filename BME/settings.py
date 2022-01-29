@@ -32,8 +32,9 @@ SECRET_KEY = 'django-insecure-s$dtp0=d*ieplv81zbaa7vawai%%qm@3d=sm^2vx@bb%2f+y#r
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+DEBUG_PROPAGATE_EXCEPTIONS = True
 
-ALLOWED_HOSTS = ['cedassets.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -50,11 +51,14 @@ INSTALLED_APPS = [
     'django_filters',
     'bootstrapform',
     'widget_tweaks',
-    'bootstrap_datepicker_plus'
+    'bootstrap_datepicker_plus',
+    'background_task',
     
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
