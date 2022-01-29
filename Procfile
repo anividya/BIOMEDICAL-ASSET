@@ -1,1 +1,1 @@
-web: gunicorn BME.wsgi --log-file -
+web: gunicorn assets.wsgi
