@@ -1,1 +1,1 @@
-web: lein run -m BME.web $PORT
+web: gunicorn assets.wsgi
